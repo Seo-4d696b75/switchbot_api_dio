@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/foundation.dart';
 import 'package:switchbot_api_dio/src/model/control/device_command.dart';
 import 'package:switchbot_api_dio/src/model/converter.dart';
 import 'package:switchbot_api_dio/src/model/device/physical/physical_device.dart';
@@ -109,12 +108,11 @@ abstract class _PhysicalDeviceCommand implements PhysicalDeviceCommand {
         (other is PhysicalDeviceCommand &&
             other.type == type &&
             other.command == command &&
-            other.param == param &&
-            listEquals(deviceTypes.toList(), other.deviceTypes.toList()));
+            other.param == param);
   }
 
   @override
-  int get hashCode => Object.hash(type, command, param, deviceTypes.toList());
+  int get hashCode => Object.hash(type, command, param);
 }
 
 class _SwitchableDeviceCommand extends _PhysicalDeviceCommand {
