@@ -1,7 +1,8 @@
+/// A simple client of [SwitchBotAPI v1.1](https://github.com/OpenWonderLabs/SwitchBotAPI)
+/// implemented by dio library
 library switchbot_api_dio;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/auth/auth.dart';
+export 'src/client.dart';
+export 'src/model/model.dart';
+export 'src/switchbot_exception.dart';
