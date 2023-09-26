@@ -27,3 +27,16 @@
 .dart_tool/
 .packages
 build/
+
+# fvm
+/.fvm/flutter_sdk
+
+# freezed
+# /lib/**/*.freezed.dart
+# /lib/**/*.g.dart
+
+# flutter_gen
+/lib/gen
+
+# Mockito
+/test/**/*.mocks.dart
