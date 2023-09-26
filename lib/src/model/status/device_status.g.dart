@@ -313,8 +313,8 @@ _$_DeviceStatusStripLight _$$_DeviceStatusStripLightFromJson(
                   : const PowerStateConverter().fromJson(v as String)),
           version: $checkedConvert('version', (v) => v as String? ?? ''),
           brightness: $checkedConvert('brightness', (v) => v as int? ?? 100),
-          color: $checkedConvert(
-              'color', (v) => const ColorConverter().fromJson(v as String)),
+          color: $checkedConvert('color',
+              (v) => const LightColorConverter().fromJson(v as String)),
         );
         return val;
       },
@@ -330,7 +330,7 @@ Map<String, dynamic> _$$_DeviceStatusStripLightToJson(
       'power': const PowerStateConverter().toJson(instance.power),
       'version': instance.version,
       'brightness': instance.brightness,
-      'color': const ColorConverter().toJson(instance.color),
+      'color': const LightColorConverter().toJson(instance.color),
     };
 
 _$_DeviceStatusColorBulb _$$_DeviceStatusColorBulbFromJson(
@@ -349,8 +349,8 @@ _$_DeviceStatusColorBulb _$$_DeviceStatusColorBulbFromJson(
                   : const PowerStateConverter().fromJson(v as String)),
           version: $checkedConvert('version', (v) => v as String? ?? ''),
           brightness: $checkedConvert('brightness', (v) => v as int? ?? 100),
-          color: $checkedConvert(
-              'color', (v) => const ColorConverter().fromJson(v as String)),
+          color: $checkedConvert('color',
+              (v) => const LightColorConverter().fromJson(v as String)),
           colorTemperature:
               $checkedConvert('colorTemperature', (v) => v as int? ?? 2700),
         );
@@ -368,7 +368,7 @@ Map<String, dynamic> _$$_DeviceStatusColorBulbToJson(
       'power': const PowerStateConverter().toJson(instance.power),
       'version': instance.version,
       'brightness': instance.brightness,
-      'color': const ColorConverter().toJson(instance.color),
+      'color': const LightColorConverter().toJson(instance.color),
       'colorTemperature': instance.colorTemperature,
     };
 

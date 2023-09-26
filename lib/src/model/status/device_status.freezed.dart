@@ -2616,11 +2616,9 @@ mixin _$DeviceStatusStripLight {
   @JsonKey(defaultValue: 100)
   int get brightness => throw _privateConstructorUsedError;
 
-  /// the color value, RGB "255:255:255"
-  ///
-  /// the alpha channel is 0xFF
-  @ColorConverter()
-  Color get color => throw _privateConstructorUsedError;
+  /// the color value
+  @LightColorConverter()
+  LightColor get color => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2642,7 +2640,7 @@ abstract class $DeviceStatusStripLightCopyWith<$Res> {
       PowerState power,
       @JsonKey(defaultValue: '') String version,
       @JsonKey(defaultValue: 100) int brightness,
-      @ColorConverter() Color color});
+      @LightColorConverter() LightColor color});
 }
 
 /// @nodoc
@@ -2690,7 +2688,7 @@ class _$DeviceStatusStripLightCopyWithImpl<$Res,
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as LightColor,
     ) as $Val);
   }
 }
@@ -2711,7 +2709,7 @@ abstract class _$$_DeviceStatusStripLightCopyWith<$Res>
       PowerState power,
       @JsonKey(defaultValue: '') String version,
       @JsonKey(defaultValue: 100) int brightness,
-      @ColorConverter() Color color});
+      @LightColorConverter() LightColor color});
 }
 
 /// @nodoc
@@ -2757,7 +2755,7 @@ class __$$_DeviceStatusStripLightCopyWithImpl<$Res>
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as LightColor,
     ));
   }
 }
@@ -2773,7 +2771,7 @@ class _$_DeviceStatusStripLight extends _DeviceStatusStripLight {
       required this.power,
       @JsonKey(defaultValue: '') required this.version,
       @JsonKey(defaultValue: 100) required this.brightness,
-      @ColorConverter() required this.color})
+      @LightColorConverter() required this.color})
       : super._();
 
   factory _$_DeviceStatusStripLight.fromJson(Map<String, dynamic> json) =>
@@ -2801,12 +2799,10 @@ class _$_DeviceStatusStripLight extends _DeviceStatusStripLight {
   @JsonKey(defaultValue: 100)
   final int brightness;
 
-  /// the color value, RGB "255:255:255"
-  ///
-  /// the alpha channel is 0xFF
+  /// the color value
   @override
-  @ColorConverter()
-  final Color color;
+  @LightColorConverter()
+  final LightColor color;
 
   @override
   String toString() {
@@ -2857,7 +2853,7 @@ abstract class _DeviceStatusStripLight extends DeviceStatusStripLight {
           required final PowerState power,
           @JsonKey(defaultValue: '') required final String version,
           @JsonKey(defaultValue: 100) required final int brightness,
-          @ColorConverter() required final Color color}) =
+          @LightColorConverter() required final LightColor color}) =
       _$_DeviceStatusStripLight;
   const _DeviceStatusStripLight._() : super._();
 
@@ -2887,11 +2883,9 @@ abstract class _DeviceStatusStripLight extends DeviceStatusStripLight {
   int get brightness;
   @override
 
-  /// the color value, RGB "255:255:255"
-  ///
-  /// the alpha channel is 0xFF
-  @ColorConverter()
-  Color get color;
+  /// the color value
+  @LightColorConverter()
+  LightColor get color;
   @override
   @JsonKey(ignore: true)
   _$$_DeviceStatusStripLightCopyWith<_$_DeviceStatusStripLight> get copyWith =>
@@ -2922,11 +2916,9 @@ mixin _$DeviceStatusColorBulb {
   @JsonKey(defaultValue: 100)
   int get brightness => throw _privateConstructorUsedError;
 
-  /// the color value, RGB "255:255:255"
-  ///
-  /// the alpha channel is 0xFF
-  @ColorConverter()
-  Color get color => throw _privateConstructorUsedError;
+  /// the color value
+  @LightColorConverter()
+  LightColor get color => throw _privateConstructorUsedError;
 
   /// the color temperature value, range from 2700 to 6500
   @JsonKey(defaultValue: 2700)
@@ -2952,7 +2944,7 @@ abstract class $DeviceStatusColorBulbCopyWith<$Res> {
       PowerState power,
       @JsonKey(defaultValue: '') String version,
       @JsonKey(defaultValue: 100) int brightness,
-      @ColorConverter() Color color,
+      @LightColorConverter() LightColor color,
       @JsonKey(defaultValue: 2700) int colorTemperature});
 }
 
@@ -3002,7 +2994,7 @@ class _$DeviceStatusColorBulbCopyWithImpl<$Res,
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as LightColor,
       colorTemperature: null == colorTemperature
           ? _value.colorTemperature
           : colorTemperature // ignore: cast_nullable_to_non_nullable
@@ -3027,7 +3019,7 @@ abstract class _$$_DeviceStatusColorBulbCopyWith<$Res>
       PowerState power,
       @JsonKey(defaultValue: '') String version,
       @JsonKey(defaultValue: 100) int brightness,
-      @ColorConverter() Color color,
+      @LightColorConverter() LightColor color,
       @JsonKey(defaultValue: 2700) int colorTemperature});
 }
 
@@ -3074,7 +3066,7 @@ class __$$_DeviceStatusColorBulbCopyWithImpl<$Res>
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as LightColor,
       colorTemperature: null == colorTemperature
           ? _value.colorTemperature
           : colorTemperature // ignore: cast_nullable_to_non_nullable
@@ -3094,7 +3086,7 @@ class _$_DeviceStatusColorBulb extends _DeviceStatusColorBulb {
       required this.power,
       @JsonKey(defaultValue: '') required this.version,
       @JsonKey(defaultValue: 100) required this.brightness,
-      @ColorConverter() required this.color,
+      @LightColorConverter() required this.color,
       @JsonKey(defaultValue: 2700) required this.colorTemperature})
       : super._();
 
@@ -3123,12 +3115,10 @@ class _$_DeviceStatusColorBulb extends _DeviceStatusColorBulb {
   @JsonKey(defaultValue: 100)
   final int brightness;
 
-  /// the color value, RGB "255:255:255"
-  ///
-  /// the alpha channel is 0xFF
+  /// the color value
   @override
-  @ColorConverter()
-  final Color color;
+  @LightColorConverter()
+  final LightColor color;
 
   /// the color temperature value, range from 2700 to 6500
   @override
@@ -3186,7 +3176,7 @@ abstract class _DeviceStatusColorBulb extends DeviceStatusColorBulb {
           required final PowerState power,
           @JsonKey(defaultValue: '') required final String version,
           @JsonKey(defaultValue: 100) required final int brightness,
-          @ColorConverter() required final Color color,
+          @LightColorConverter() required final LightColor color,
           @JsonKey(defaultValue: 2700) required final int colorTemperature}) =
       _$_DeviceStatusColorBulb;
   const _DeviceStatusColorBulb._() : super._();
@@ -3217,11 +3207,9 @@ abstract class _DeviceStatusColorBulb extends DeviceStatusColorBulb {
   int get brightness;
   @override
 
-  /// the color value, RGB "255:255:255"
-  ///
-  /// the alpha channel is 0xFF
-  @ColorConverter()
-  Color get color;
+  /// the color value
+  @LightColorConverter()
+  LightColor get color;
   @override
 
   /// the color temperature value, range from 2700 to 6500
@@ -4121,7 +4109,8 @@ mixin _$_DeviceStatusPlugMini {
   @JsonKey(defaultValue: 0.0)
   double get weight => throw _privateConstructorUsedError;
 
-  /// the duration that the device has been used during a day, measured in minutes
+  /// the duration that the device has been used during a day,
+  /// measured in minutes
   @JsonKey(defaultValue: 0)
   int get electricityOfDay => throw _privateConstructorUsedError;
 
@@ -4337,7 +4326,8 @@ class _$__DeviceStatusPlugMini implements __DeviceStatusPlugMini {
   @JsonKey(defaultValue: 0.0)
   final double weight;
 
-  /// the duration that the device has been used during a day, measured in minutes
+  /// the duration that the device has been used during a day,
+  /// measured in minutes
   @override
   @JsonKey(defaultValue: 0)
   final int electricityOfDay;
@@ -4435,7 +4425,8 @@ abstract class __DeviceStatusPlugMini implements _DeviceStatusPlugMini {
   double get weight;
   @override
 
-  /// the duration that the device has been used during a day, measured in minutes
+  /// the duration that the device has been used during a day,
+  /// measured in minutes
   @JsonKey(defaultValue: 0)
   int get electricityOfDay;
   @override

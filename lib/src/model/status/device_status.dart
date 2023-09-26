@@ -1,6 +1,4 @@
 // ignore_for_file: invalid_annotation_target
-import 'dart:ui';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:switchbot_api_dio/src/model/converter.dart';
 import 'package:switchbot_api_dio/src/model/device/physical/type.dart';

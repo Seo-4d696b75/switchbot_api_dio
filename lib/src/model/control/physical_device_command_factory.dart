@@ -113,7 +113,8 @@ class ColorBulbCommandFactory {
       _BrightnessDeviceCommand(brightness);
 
   /// set RGB color value
-  PhysicalDeviceCommand setColor(Color color) => _ColorDeviceCommand(color);
+  PhysicalDeviceCommand setColor(LightColor color) =>
+      _ColorDeviceCommand(color);
 
   /// set color temperature in 2700-6500
   PhysicalDeviceCommand setColorTemperature(int temperature) =>
@@ -137,7 +138,8 @@ class StripLightCommandFactory {
       _BrightnessDeviceCommand(brightness);
 
   /// set RGB color value
-  PhysicalDeviceCommand setColor(Color color) => _ColorDeviceCommand(color);
+  PhysicalDeviceCommand setColor(LightColor color) =>
+      _ColorDeviceCommand(color);
 }
 
 class VacuumCleanerCommandFactory {

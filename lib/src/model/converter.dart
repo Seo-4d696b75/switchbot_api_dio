@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:switchbot_api_dio/src/model/device/device_collection.dart';
 import 'package:switchbot_api_dio/src/model/status/device_status.dart';
@@ -145,29 +143,12 @@ class VacuumCleanerStatusConverter extends _EnumConverter<VacuumCleanerStatus> {
   }
 }
 
-class ColorConverter extends JsonConverter<Color, String> {
-  const ColorConverter();
+class LightColorConverter extends JsonConverter<LightColor, String> {
+  const LightColorConverter();
 
   @override
-  Color fromJson(String json) {
-    final channel = json.split(':');
-    if (channel.length != 3) {
-      throw ArgumentError.value(
-        json,
-        'json',
-        'invalid RGB color value: `\$red:\$green:\$blue`',
-      );
-    }
-    return Color.fromARGB(
-      255,
-      int.parse(channel[0]),
-      int.parse(channel[1]),
-      int.parse(channel[2]),
-    );
-  }
+  LightColor fromJson(String json) => LightColor.fromJson(json);
 
   @override
-  String toJson(Color object) {
-    return '${object.red}:${object.green}:${object.blue}';
-  }
+  String toJson(LightColor object) => object.toJson();
 }

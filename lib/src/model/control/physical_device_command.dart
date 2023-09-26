@@ -1,8 +1,6 @@
-import 'dart:ui';
-
 import 'package:switchbot_api_dio/src/model/control/device_command.dart';
-import 'package:switchbot_api_dio/src/model/converter.dart';
 import 'package:switchbot_api_dio/src/model/device/physical/physical_device.dart';
+import 'package:switchbot_api_dio/src/model/status/device_status.dart';
 
 part 'physical_device_command_factory.dart';
 
@@ -218,10 +216,10 @@ class _BrightnessDeviceCommand extends _PhysicalDeviceCommand {
 }
 
 class _ColorDeviceCommand extends _PhysicalDeviceCommand {
-  _ColorDeviceCommand(Color color)
+  _ColorDeviceCommand(LightColor color)
       : super(
           command: 'setColor',
-          param: const ColorConverter().toJson(color),
+          param: color.toJson(),
         );
 
   @override
