@@ -55,7 +55,8 @@ abstract class PhysicalDeviceCommand implements DeviceCommand {
   static StripLightCommandFactory get stripLight =>
       const StripLightCommandFactory._();
 
-  /// Command for 'Robot Vacuum Cleaner S1' and 'Robot Vacuum Cleaner S1 Plus' device
+  /// Command for 'Robot Vacuum Cleaner S1' and
+  /// 'Robot Vacuum Cleaner S1 Plus' device
   ///
   /// [SwitchBot API docs](https://github.com/OpenWonderLabs/SwitchBotAPI#robot-vacuum-cleaner-s1-2)
   static VacuumCleanerCommandFactory get vacuumCleaner =>
@@ -98,7 +99,8 @@ abstract class _PhysicalDeviceCommand implements PhysicalDeviceCommand {
 
   @override
   String toString() {
-    return 'PhysicalDeviceCommand(type: $type, command: $command, param: $param)';
+    return 'PhysicalDeviceCommand'
+        '(type: $type, command: $command, param: $param)';
   }
 
   @override

@@ -1,7 +1,8 @@
 // ignore_for_file: invalid_annotation_target
 part of 'device_status.dart';
 
-/// Status of 'Robot Vacuum Cleaner S1' and 'Robot Vacuum Cleaner S1 Plus' device
+/// Status of 'Robot Vacuum Cleaner S1'
+/// and 'Robot Vacuum Cleaner S1 Plus' device
 abstract class DeviceStatusVacuumCleaner
     with _$_DeviceStatusVacuumCleaner
     implements DeviceStatus {

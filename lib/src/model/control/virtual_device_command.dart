@@ -112,7 +112,8 @@ class VirtualDeviceCommand implements DeviceCommand {
 
   @override
   String toString() {
-    return 'VirtualDeviceCommand(type: $type, command: $command, param: $param)';
+    return 'VirtualDeviceCommand'
+        '(type: $type, command: $command, param: $param)';
   }
 
   @override

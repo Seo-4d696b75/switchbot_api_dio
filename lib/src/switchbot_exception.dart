@@ -41,7 +41,7 @@ class SwitchBotUnsupportedCommandException implements SwitchBotException {
 /// a response with status code other than 200,
 /// this exception will be thrown with;
 /// - [type] is [DioExceptionType.badResponse]
-/// - [response.statusCode] is other than 200
+/// - `response.statusCode` is other than 200
 ///
 /// For each status code, an error is described in [SwitchBotApi docs](https://github.com/OpenWonderLabs/SwitchBotAPI#standard-http-error-codes)
 class SwitchBotApiHttpException extends DioException
@@ -207,7 +207,8 @@ class SwitchBotApiStatusException extends DioException
   /// - 160: command is not supported
   /// - 161: device offline
   /// - 171: hub device is offline
-  /// - 190: Device internal error due to device states not synchronized with server
+  /// - 190: Device internal error due to
+  ///   device states not synchronized with server
   final int statusCode;
 
   final String _message;

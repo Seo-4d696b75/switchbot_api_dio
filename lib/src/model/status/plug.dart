@@ -97,7 +97,8 @@ class _DeviceStatusPlugMini
     /// the power consumed in a day, measured in Watts
     @JsonKey(defaultValue: 0.0) required double weight,
 
-    /// the duration that the device has been used during a day, measured in minutes
+    /// the duration that the device has been used during a day,
+    /// measured in minutes
     @JsonKey(defaultValue: 0) required int electricityOfDay,
 
     /// the current of the device at the moment, measured in Amp
