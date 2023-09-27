@@ -1,39 +1,98 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# switchbot_api_dio
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+A simple implementation of [SwitchBotAPI (v1.1)](https://github.com/OpenWonderLabs/SwitchBotAPI) 
+client with [dio library](https://pub.dev/packages/dio).
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+**Note**: This is a 3rd party library 
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- ✅ Get device list
+- ✅ Get device status
+- ✅ Send device control command
+- ✅ Get scene list
+- ✅ Execute manual scenes
+- ❌ Webhook
+
+Details of each API endpoint are described 
+in [SwitchBotAPI docs](https://github.com/OpenWonderLabs/SwitchBotAPI/blob/main/README.md).
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add `switchbot_api_dio` package to your pubspec dependencies.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+### Initialize client
+
+User token and secret are required for api authorization.  
+These credentials are available in developer options of SwitchBot official app.
+[Please follow the steps described in SwitchBotAPI docs.](https://github.com/OpenWonderLabs/SwitchBotAPI/tree/main#getting-started)
 
 ```dart
-const like = 'sample';
+import 'package:switchbot_api_dio/switchbot_api_dio.dart';
+
+final api = SwitchBotApi(
+  userToken: 'token', 
+  userSecret: 'secret',
+);
 ```
 
-## Additional information
+or your own `Dio` instance can be passed.
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+import 'package:switchbot_api_dio/switchbot_api_dio.dart';
+
+final api = SwitchBotApi(
+  userToken: 'token', 
+  userSecret: 'secret',
+  dio: dio,
+);
+```
+
+### Get devices and send control command
+
+```dart
+void main() async {
+  final collection = await api.getDevices();
+  
+  // A list of physical devices
+  print(collection.deviceList);
+  // A list of virtual infrared remote devices
+  print(collection.infraredRemoteList);
+
+  // Almost all devices support 'turnOn' command
+  await api.controlVirtualDevice(
+    device: collection.infraredRemoteList[0],
+    command: VirtualDeviceCommand.turnOn(),
+  );
+  // Send 'press' command to physical device 'Bot'
+  await api.controlPhysicalDevice(
+    device: collection.deviceList[0],
+    command: PhysicalDeviceCommand.bot.press(),
+  );
+}
+```
+
+### Get manual scenes and execute
+
+```dart
+void main() async {
+  final scenes = await api.getScenes();
+  await api.executeScene(sceneId: scenes[0].id);
+}
+```
+
+### Error handling
+
+```dart
+void main() async {
+  try {
+    await api.getDevices();
+  } on SwitchBotException catch (e) {
+    // Depending on the type of error,
+    // each subclass of `SwitchBotException` will be thrown
+    print(e);
+  }
+}
+```
