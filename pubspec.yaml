@@ -1,7 +1,12 @@
 name: switchbot_api_dio
-description: A new Flutter package project.
+description: A simple SwitchBotAPI (v1.1) client implemented by dio library.
 version: 0.0.1
 homepage: https://github.com/Seo-4d696b75/switchbot_api_dio
+repository: https://github.com/Seo-4d696b75/switchbot_api_dio
+issue_tracker: https://github.com/Seo-4d696b75/switchbot_api_dio/issues
+topics:
+  - dio
+  - switchbot
 
 environment:
   sdk: ">=2.19.0 <3.0.0"
