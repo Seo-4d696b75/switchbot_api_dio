@@ -12,7 +12,17 @@ import 'package:switchbot_api_dio/src/model/scene/manual_scene.dart';
 import 'package:switchbot_api_dio/src/model/status/device_status.dart';
 import 'package:switchbot_api_dio/src/switchbot_exception.dart';
 
+/// API client of SwitchBot (v1.1)
 class SwitchBotApi {
+  /// Gets a api client
+  ///
+  /// User credentials ([userToken] and [userSecret]) are required,
+  /// others are optional.
+  /// - [dio] : [Dio] instance for http networking. if null, `Dio()` is used.
+  /// - [baseUrl] : set to `BaseOptions` of [dio]
+  /// - [getTime] : defines how to get a timestamp for api authentication
+  /// - [getNonce] : defines how to get a nonce posted to api
+  /// - [generateSign] : defines how to generate signs for api authentication
   factory SwitchBotApi({
     required String userToken,
     required String userSecret,
@@ -153,7 +163,8 @@ class SwitchBotApi {
   ///
   /// ## Using factory constructor for commands
   /// [VirtualDeviceCommand] has factory constructors for
-  /// almost all the basic commands.
+  /// commonly used commands.
+  /// For others, you can create a command by specifying command name directly.
   ///
   /// ```
   /// // sends "turnOn" command
