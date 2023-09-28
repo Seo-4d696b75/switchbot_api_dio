@@ -1,9 +1,19 @@
+import 'package:switchbot_api_dio/src/client.dart';
 import 'package:switchbot_api_dio/src/model/control/device_command.dart';
 import 'package:switchbot_api_dio/src/model/device/physical/physical_device.dart';
 import 'package:switchbot_api_dio/src/model/status/device_status.dart';
 
 part 'physical_device_command_factory.dart';
 
+/// Command for physical device
+///
+/// For each [PhysicalDeviceType], factory methods are available.
+/// This command can be sent by calling [SwitchBotApi.controlPhysicalDevice].
+///
+/// (eg) Gets 'press' command to 'Bot' device
+/// ```dart
+/// final command = PhysicalDeviceCommand.bot.press()
+/// ```
 abstract class PhysicalDeviceCommand implements DeviceCommand {
   /// Set of supported device types
   Iterable<PhysicalDeviceType> get deviceTypes;
