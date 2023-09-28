@@ -6,6 +6,7 @@ part 'manual_scene.g.dart';
 
 // ignore_for_file: invalid_annotation_target
 
+/// A smart scene created by a user
 @freezed
 class ManualScene with _$ManualScene {
   const factory ManualScene({
