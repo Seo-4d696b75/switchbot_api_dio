@@ -20,7 +20,10 @@ DeviceCollection _$DeviceCollectionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DeviceCollection {
+  /// a list of physical devices
   List<PhysicalDevice> get deviceList => throw _privateConstructorUsedError;
+
+  /// a list of virtual infrared remote devices
   List<VirtualDevice> get infraredRemoteList =>
       throw _privateConstructorUsedError;
 
@@ -122,7 +125,10 @@ class _$_DeviceCollection implements _DeviceCollection {
   factory _$_DeviceCollection.fromJson(Map<String, dynamic> json) =>
       _$$_DeviceCollectionFromJson(json);
 
+  /// a list of physical devices
   final List<PhysicalDevice> _deviceList;
+
+  /// a list of physical devices
   @override
   List<PhysicalDevice> get deviceList {
     if (_deviceList is EqualUnmodifiableListView) return _deviceList;
@@ -130,7 +136,10 @@ class _$_DeviceCollection implements _DeviceCollection {
     return EqualUnmodifiableListView(_deviceList);
   }
 
+  /// a list of virtual infrared remote devices
   final List<VirtualDevice> _infraredRemoteList;
+
+  /// a list of virtual infrared remote devices
   @override
   List<VirtualDevice> get infraredRemoteList {
     if (_infraredRemoteList is EqualUnmodifiableListView)
@@ -186,8 +195,12 @@ abstract class _DeviceCollection implements DeviceCollection {
       _$_DeviceCollection.fromJson;
 
   @override
+
+  /// a list of physical devices
   List<PhysicalDevice> get deviceList;
   @override
+
+  /// a list of virtual infrared remote devices
   List<VirtualDevice> get infraredRemoteList;
   @override
   @JsonKey(ignore: true)
