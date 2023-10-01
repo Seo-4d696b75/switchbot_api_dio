@@ -1,6 +1,6 @@
+import 'package:switchbot_api_dio/src/model/common/light_color.dart';
 import 'package:switchbot_api_dio/src/model/control/physical_device_command.dart';
 import 'package:switchbot_api_dio/src/model/device/physical/physical_device.dart';
-import 'package:switchbot_api_dio/src/model/status/device_status.dart';
 
 // base implementation
 abstract class _PhysicalDeviceCommand implements PhysicalDeviceCommand {

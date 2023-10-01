@@ -1,7 +1,7 @@
 import 'package:switchbot_api_dio/src/client.dart';
+import 'package:switchbot_api_dio/src/model/common/enum.dart';
 import 'package:switchbot_api_dio/src/model/control/device_command.dart';
 import 'package:switchbot_api_dio/src/model/device/device_collection.dart';
-import 'package:switchbot_api_dio/src/model/status/device_status.dart';
 
 /// Command for virtual infrared remote devices
 ///

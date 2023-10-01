@@ -15,10 +15,8 @@ class DeviceStatusLock with _$DeviceStatusLock implements DeviceStatus {
     @JsonKey(defaultValue: '') required String version,
 
     /// determines if locked or not
-    @LockStateConverter()
-    required LockState lockState,
+    @LockStateConverter() required LockState lockState,
 
-    // TODO change to enum if possible
     /// determines if the door is closed or not
     required String doorState,
 
@@ -36,11 +34,4 @@ class DeviceStatusLock with _$DeviceStatusLock implements DeviceStatus {
   @PhysicalDeviceTypeConverter()
   @override
   PhysicalDeviceType get type => PhysicalDeviceType.lock;
-}
-
-/// State of 'Lock' device
-enum LockState {
-  locked,
-  unlocked,
-  jammed,
 }

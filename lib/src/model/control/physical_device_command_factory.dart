@@ -1,8 +1,8 @@
+import 'package:switchbot_api_dio/src/model/common/enum.dart';
+import 'package:switchbot_api_dio/src/model/common/light_color.dart';
 import 'package:switchbot_api_dio/src/model/control/device_command.dart';
 import 'package:switchbot_api_dio/src/model/control/physical_device_command.dart';
 import 'package:switchbot_api_dio/src/model/control/physical_device_command_impl.dart';
-import 'package:switchbot_api_dio/src/model/device/physical/physical_device.dart';
-import 'package:switchbot_api_dio/src/model/status/device_status.dart';
 
 class BotCommandFactory {
   const BotCommandFactory();

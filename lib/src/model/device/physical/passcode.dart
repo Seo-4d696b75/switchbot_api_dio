@@ -36,24 +36,3 @@ class LockPasscode with _$LockPasscode {
   factory LockPasscode.fromJson(Map<String, dynamic> json) =>
       _$LockPasscodeFromJson(json);
 }
-
-/// Type of passcode registered in 'Keypad' and 'Keypad Touch' device
-enum PasscodeType {
-  /// a permanent passcode
-  permanent,
-
-  /// a temporary passcode
-  timeLimit,
-
-  /// a one-time passcode
-  disposable,
-
-  /// an emergency passcode
-  urgent,
-}
-
-/// Expire state of passcode registered in 'Keypad' and 'Keypad Touch' device
-enum PasscodeStatus {
-  normal,
-  expired,
-}

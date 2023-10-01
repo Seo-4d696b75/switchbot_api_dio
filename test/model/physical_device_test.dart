@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:switchbot_api_dio/src/model/common/enum.dart';
 import 'package:switchbot_api_dio/switchbot_api_dio.dart';
 import 'package:test/test.dart';
 

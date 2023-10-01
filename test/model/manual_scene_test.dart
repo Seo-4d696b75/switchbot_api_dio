@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:switchbot_api_dio/src/model/api_response.dart';
+import 'package:switchbot_api_dio/src/model/common/api_response.dart';
 import 'package:switchbot_api_dio/switchbot_api_dio.dart';
 import 'package:test/test.dart';
 
