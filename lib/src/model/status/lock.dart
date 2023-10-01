@@ -38,6 +38,7 @@ class DeviceStatusLock with _$DeviceStatusLock implements DeviceStatus {
   PhysicalDeviceType get type => PhysicalDeviceType.lock;
 }
 
+/// State of 'Lock' device
 enum LockState {
   locked,
   unlocked,

@@ -1,3 +1,6 @@
+import 'package:switchbot_api_dio/src/model/device/physical/physical_device.dart';
+
+/// Type of [PhysicalDevice]
 enum PhysicalDeviceType {
   bot('Bot'),
   curtain('Curtain'),
@@ -31,5 +34,6 @@ enum PhysicalDeviceType {
 
   const PhysicalDeviceType(this.value);
 
+  /// Displayed name of device type
   final String value;
 }
