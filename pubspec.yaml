@@ -9,7 +9,7 @@ topics:
   - switchbot
 
 environment:
-  sdk: ">=2.19.0 <3.0.0"
+  sdk: ">=2.15.0 <3.0.0"
 
 dependencies:
   crypto: ^3.0.3

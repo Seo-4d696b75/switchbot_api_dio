@@ -190,9 +190,12 @@ class VacuumCleanerDeviceCommand extends _PhysicalDeviceCommand {
 
 class KeypadDeviceCommand extends _PhysicalDeviceCommand {
   const KeypadDeviceCommand({
-    required super.command,
-    super.param,
-  });
+    required String command,
+    dynamic param,
+  }) : super(
+          command: command,
+          param: param,
+        );
 
   @override
   Iterable<PhysicalDeviceType> get deviceTypes => const [

@@ -47,13 +47,20 @@ class SwitchBotUnsupportedCommandException implements SwitchBotException {
 class SwitchBotApiHttpException extends DioException
     implements SwitchBotException {
   SwitchBotApiHttpException._({
-    required super.requestOptions,
-    required super.response,
-    required super.type,
-    required super.message,
-    required super.stackTrace,
-    required super.error,
-  });
+    required RequestOptions requestOptions,
+    required Response<dynamic>? response,
+    required DioExceptionType type,
+    required String? message,
+    required StackTrace stackTrace,
+    required Object? error,
+  }) : super(
+          requestOptions: requestOptions,
+          response: response,
+          type: type,
+          message: message,
+          stackTrace: stackTrace,
+          error: error,
+        );
 
   factory SwitchBotApiHttpException.from(DioException cause) =>
       SwitchBotApiHttpException._(
@@ -99,14 +106,19 @@ class SwitchBotApiHttpException extends DioException
 class SwitchBotApiParseException extends DioException
     implements SwitchBotException {
   SwitchBotApiParseException._({
-    required super.requestOptions,
-    required super.response,
-    required super.message,
+    required RequestOptions requestOptions,
+    required Response<dynamic>? response,
+    required String? message,
     required Exception error,
     required StackTrace stackTrace,
   })  : _error = error,
         _stackTrace = stackTrace,
-        super(type: DioExceptionType.unknown);
+        super(
+          requestOptions: requestOptions,
+          response: response,
+          type: DioExceptionType.unknown,
+          message: message,
+        );
 
   factory SwitchBotApiParseException.from({
     required Response<dynamic> response,
@@ -163,14 +175,21 @@ class SwitchBotApiParseException extends DioException
 class SwitchBotApiStatusException extends DioException
     implements SwitchBotException {
   SwitchBotApiStatusException._({
-    required super.requestOptions,
-    required super.response,
+    required RequestOptions requestOptions,
+    required Response<dynamic>? response,
     required String message,
-    required super.error,
-    required super.stackTrace,
+    required Object? error,
+    required StackTrace? stackTrace,
     required this.statusCode,
   })  : _message = message,
-        super(type: DioExceptionType.unknown);
+        super(
+          requestOptions: requestOptions,
+          response: response,
+          type: DioExceptionType.unknown,
+          message: message,
+          error: error,
+          stackTrace: stackTrace,
+        );
 
   factory SwitchBotApiStatusException.from({
     required Response<dynamic> response,
