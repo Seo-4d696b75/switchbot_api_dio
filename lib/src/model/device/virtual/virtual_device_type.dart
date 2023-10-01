@@ -1,6 +1,6 @@
 import 'package:switchbot_api_dio/src/model/device/virtual/virtual_device.dart';
 
-/// type of [VirtualDevice]
+/// Type of [VirtualDevice]
 ///
 /// Available commands for virtual infrared remote devices depend on this type.
 /// For more information,

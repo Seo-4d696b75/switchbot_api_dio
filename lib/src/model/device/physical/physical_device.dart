@@ -6,10 +6,6 @@ import 'package:switchbot_api_dio/src/model/device/physical/type.dart';
 export 'extension.dart';
 export 'type.dart';
 
-part 'physical_device.freezed.dart';
-
-part 'physical_device.g.dart';
-
 part 'blind.dart';
 
 part 'curtain.dart';
@@ -20,9 +16,11 @@ part 'lock.dart';
 
 part 'passcode.dart';
 
+part 'physical_device.freezed.dart';
+
+part 'physical_device.g.dart';
+
 /// A physical device registered in SwitchBot app
-///
-/// This defines common fields of all physical device types.
 abstract class PhysicalDevice {
   const factory PhysicalDevice({
     required String id,
@@ -32,6 +30,7 @@ abstract class PhysicalDevice {
     required String hubDeviceId,
   }) = _PhysicalDeviceBase;
 
+  /// Parse a JSON response
   factory PhysicalDevice.fromJson(Map<String, dynamic> json) {
     final type = json['deviceType'];
     if (type == PhysicalDeviceType.curtain.value) {

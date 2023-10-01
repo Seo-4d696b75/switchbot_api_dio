@@ -76,8 +76,10 @@ class _DeviceStatusVacuumCleaner
       _$_DeviceStatusVacuumCleanerFromJson(json);
 }
 
+/// Status of online/offline
 enum OnlineStatus { online, offline }
 
+/// Status of 'Robot Vacuum Cleaner S1 **' device
 enum VacuumCleanerStatus {
   standBy('StandBy'),
   clearing('Clearing'),
