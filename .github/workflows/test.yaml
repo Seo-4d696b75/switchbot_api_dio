@@ -23,6 +23,6 @@ jobs:
       - name: Test Preparation
         run: |
           flutter pub get
-          flutter pub run build_runner build --build-filter test/**/*.dart
+          flutter pub run build_runner build --build-filter='test/**/*.dart'
       - name: Run Test
         run: flutter test
