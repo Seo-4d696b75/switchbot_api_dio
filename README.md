@@ -1,5 +1,9 @@
 # switchbot_api_dio
 
+[![Pub](https://img.shields.io/pub/v/switchbot_api_dio.svg)](https://pub.dev/packages/switchbot_api_dio)
+[![test](https://github.com/Seo-4d696b75/switchbot_api_dio/actions/workflows/test.yaml/badge.svg)](https://github.com/Seo-4d696b75/switchbot_api_dio/actions/workflows/test.yaml)
+
+
 A simple implementation of [SwitchBotAPI (v1.1)](https://github.com/OpenWonderLabs/SwitchBotAPI) 
 client with [dio library](https://pub.dev/packages/dio).
 
