@@ -38,18 +38,6 @@ final api = SwitchBotApi(
 );
 ```
 
-or your own `Dio` instance can be passed.
-
-```dart
-import 'package:switchbot_api_dio/switchbot_api_dio.dart';
-
-final api = SwitchBotApi(
-  userToken: 'token', 
-  userSecret: 'secret',
-  dio: dio,
-);
-```
-
 ### Get devices and send control command
 
 ```dart

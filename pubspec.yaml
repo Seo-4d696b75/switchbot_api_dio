@@ -1,6 +1,6 @@
 name: switchbot_api_dio
 description: A simple implementation of SwitchBotAPI (v1.1) client with dio library.
-version: 0.0.1
+version: 0.1.0
 homepage: https://github.com/Seo-4d696b75/switchbot_api_dio
 repository: https://github.com/Seo-4d696b75/switchbot_api_dio
 issue_tracker: https://github.com/Seo-4d696b75/switchbot_api_dio/issues
