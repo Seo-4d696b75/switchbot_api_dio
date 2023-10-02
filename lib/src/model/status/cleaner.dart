@@ -75,22 +75,3 @@ class _DeviceStatusVacuumCleaner
   factory _DeviceStatusVacuumCleaner.fromJson(Map<String, dynamic> json) =>
       _$_DeviceStatusVacuumCleanerFromJson(json);
 }
-
-enum OnlineStatus { online, offline }
-
-enum VacuumCleanerStatus {
-  standBy('StandBy'),
-  clearing('Clearing'),
-  paused('Paused'),
-  gotoChargeBase('GotoChargeBase'),
-  charging('Charging'),
-  dormant('Dormant'),
-  inTrouble('InTrouble'),
-  inRemoteControl('InRemoteControl'),
-  inDustCollecting('InDustCollecting'),
-  ;
-
-  const VacuumCleanerStatus(this.value);
-
-  final String value;
-}

@@ -1,19 +1,40 @@
-import 'package:switchbot_api_dio/src/model/device/device_collection.dart';
+import 'package:switchbot_api_dio/src/client.dart';
+import 'package:switchbot_api_dio/src/model/model.dart';
 
 export 'physical_device_command.dart';
 export 'virtual_device_command.dart';
 
 /// Command for device
 ///
-/// This class defines request body in JSON posted to API endpoint.
+/// This data class stands for a request body posted to API endpoint like:
+/// ```json
+/// {
+///     "command": "name of command",
+///     "parameter": "params of command if any (maybe JSON Object)",
+///     "commandType": "type of command"
+/// }
+/// ```
+///
+/// Subclasses are available for two device types;
+/// - [PhysicalDeviceCommand]
+/// - [VirtualDeviceCommand]
 ///
 /// [SwitchBot API docs](https://github.com/OpenWonderLabs/SwitchBotAPI#request-body-parameters)
 abstract class DeviceCommand {
+  /// Gets a raw command
+  ///
+  /// No validation done. If any invalid param,
+  /// calling [SwitchBotApi.controlRaw] this this command
+  /// results in throwing an exception.
+  ///
+  /// It is recommended to use instead:
+  /// - [PhysicalDeviceCommand]
+  /// - [VirtualDeviceCommand]
   const factory DeviceCommand.raw({
     required String type,
     required String command,
     dynamic param,
-  }) = DeviceCommandRaw._;
+  }) = _DeviceCommandRaw;
 
   /// A param named 'commandType'.
   ///
@@ -41,8 +62,8 @@ extension DeviceCommandExt on DeviceCommand {
   }
 }
 
-class DeviceCommandRaw implements DeviceCommand {
-  const DeviceCommandRaw._({
+class _DeviceCommandRaw implements DeviceCommand {
+  const _DeviceCommandRaw({
     required this.type,
     required this.command,
     this.param = 'default',
@@ -65,7 +86,7 @@ class DeviceCommandRaw implements DeviceCommand {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DeviceCommandRaw &&
+        (other is _DeviceCommandRaw &&
             other.type == type &&
             other.command == command &&
             other.param == param);

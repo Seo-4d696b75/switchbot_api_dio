@@ -77,14 +77,3 @@ class DeviceStatusContactSensor
   @override
   PhysicalDeviceType get type => PhysicalDeviceType.contactSensor;
 }
-
-enum SensorBrightness {
-  bright,
-  dim,
-}
-
-enum OpenState {
-  open,
-  close,
-  timeOutNotClose,
-}

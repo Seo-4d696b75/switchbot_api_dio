@@ -1,5 +1,9 @@
 # switchbot_api_dio
 
+[![Pub](https://img.shields.io/pub/v/switchbot_api_dio.svg)](https://pub.dev/packages/switchbot_api_dio)
+[![test](https://github.com/Seo-4d696b75/switchbot_api_dio/actions/workflows/test.yaml/badge.svg)](https://github.com/Seo-4d696b75/switchbot_api_dio/actions/workflows/test.yaml)
+
+
 A simple implementation of [SwitchBotAPI (v1.1)](https://github.com/OpenWonderLabs/SwitchBotAPI) 
 client with [dio library](https://pub.dev/packages/dio).
 
@@ -35,18 +39,6 @@ import 'package:switchbot_api_dio/switchbot_api_dio.dart';
 final api = SwitchBotApi(
   userToken: 'token', 
   userSecret: 'secret',
-);
-```
-
-or your own `Dio` instance can be passed.
-
-```dart
-import 'package:switchbot_api_dio/switchbot_api_dio.dart';
-
-final api = SwitchBotApi(
-  userToken: 'token', 
-  userSecret: 'secret',
-  dio: dio,
 );
 ```
 

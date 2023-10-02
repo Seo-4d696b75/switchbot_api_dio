@@ -1,20 +1,24 @@
-part of 'physical_device_command.dart';
+import 'package:switchbot_api_dio/src/model/common/enum.dart';
+import 'package:switchbot_api_dio/src/model/common/light_color.dart';
+import 'package:switchbot_api_dio/src/model/control/device_command.dart';
+import 'package:switchbot_api_dio/src/model/control/physical_device_command.dart';
+import 'package:switchbot_api_dio/src/model/control/physical_device_command_impl.dart';
 
 class BotCommandFactory {
-  const BotCommandFactory._();
+  const BotCommandFactory();
 
   /// set to ON state
-  PhysicalDeviceCommand turnOn() => const _SwitchableDeviceCommand.turnOn();
+  PhysicalDeviceCommand turnOn() => const SwitchableDeviceCommand.turnOn();
 
   /// set to OFF state
-  PhysicalDeviceCommand turnOff() => const _SwitchableDeviceCommand.turnOff();
+  PhysicalDeviceCommand turnOff() => const SwitchableDeviceCommand.turnOff();
 
   /// trigger press
-  PhysicalDeviceCommand press() => const _PressDeviceCommand();
+  PhysicalDeviceCommand press() => const PressDeviceCommand();
 }
 
 class CurtainCommandFactory {
-  const CurtainCommandFactory._();
+  const CurtainCommandFactory();
 
   /// - [mode] : 0 (Performance Mode), 1 (Silent Mode), ff (default mode)
   /// - [position] : 0~100 (0 means open, 100 means closed)
@@ -23,7 +27,7 @@ class CurtainCommandFactory {
     required String mode,
     required int position,
   }) =>
-      _CurtainDeviceCommand.setPosition(
+      CurtainDeviceCommand.setPosition(
         index: index,
         mode: mode,
         position: position,
@@ -32,36 +36,36 @@ class CurtainCommandFactory {
   /// Close the curtain
   ///
   /// equivalent to set position to 100
-  PhysicalDeviceCommand turnOff() => const _SwitchableDeviceCommand.turnOff();
+  PhysicalDeviceCommand turnOff() => const SwitchableDeviceCommand.turnOff();
 
   /// Open the curtain
   ///
   /// equivalent to set position to 0
-  PhysicalDeviceCommand turnOn() => const _SwitchableDeviceCommand.turnOn();
+  PhysicalDeviceCommand turnOn() => const SwitchableDeviceCommand.turnOn();
 }
 
 class LockCommandFactory {
-  const LockCommandFactory._();
+  const LockCommandFactory();
 
   /// rotate to locked position
-  PhysicalDeviceCommand lock() => const _LockDeviceCommand.lock();
+  PhysicalDeviceCommand lock() => const LockDeviceCommand.lock();
 
   /// rotate to unlocked position
-  PhysicalDeviceCommand unlock() => const _LockDeviceCommand.unlock();
+  PhysicalDeviceCommand unlock() => const LockDeviceCommand.unlock();
 }
 
 class HumidifierCommandFactory {
-  const HumidifierCommandFactory._();
+  const HumidifierCommandFactory();
 
   /// set to OFF state
-  PhysicalDeviceCommand turnOff() => const _SwitchableDeviceCommand.turnOff();
+  PhysicalDeviceCommand turnOff() => const SwitchableDeviceCommand.turnOff();
 
   /// set to ON state
-  PhysicalDeviceCommand turnOn() => const _SwitchableDeviceCommand.turnOn();
+  PhysicalDeviceCommand turnOn() => const SwitchableDeviceCommand.turnOn();
 
   /// set to Auto Mode
   PhysicalDeviceCommand setAutoMode() =>
-      const _HumidifierDeviceCommand.setAutoMode();
+      const HumidifierDeviceCommand.setAutoMode();
 
   /// set mode
   ///
@@ -70,89 +74,87 @@ class HumidifierCommandFactory {
   /// - 102, set atomization efficiency to 67%
   /// - 103, set atomization efficiency to 100%
   PhysicalDeviceCommand setMode(int mode) =>
-      _HumidifierDeviceCommand.setMode(mode);
+      HumidifierDeviceCommand.setMode(mode);
 }
 
 class PlugCommandFactory {
-  const PlugCommandFactory._();
+  const PlugCommandFactory();
 
   /// set to ON state
-  PhysicalDeviceCommand turnOn() => const _SwitchableDeviceCommand.turnOn();
+  PhysicalDeviceCommand turnOn() => const SwitchableDeviceCommand.turnOn();
 
   /// set to OFF state
-  PhysicalDeviceCommand turnOff() => const _SwitchableDeviceCommand.turnOff();
+  PhysicalDeviceCommand turnOff() => const SwitchableDeviceCommand.turnOff();
 }
 
 class PlugMiniCommandFactory {
-  const PlugMiniCommandFactory._();
+  const PlugMiniCommandFactory();
 
   /// set to ON state
-  PhysicalDeviceCommand turnOn() => const _SwitchableDeviceCommand.turnOn();
+  PhysicalDeviceCommand turnOn() => const SwitchableDeviceCommand.turnOn();
 
   /// set to OFF state
-  PhysicalDeviceCommand turnOff() => const _SwitchableDeviceCommand.turnOff();
+  PhysicalDeviceCommand turnOff() => const SwitchableDeviceCommand.turnOff();
 
   /// toggle state
-  PhysicalDeviceCommand toggle() => const _ToggleDeviceCommand();
+  PhysicalDeviceCommand toggle() => const ToggleDeviceCommand();
 }
 
 class ColorBulbCommandFactory {
-  const ColorBulbCommandFactory._();
+  const ColorBulbCommandFactory();
 
   /// set to ON state
-  PhysicalDeviceCommand turnOn() => const _SwitchableDeviceCommand.turnOn();
+  PhysicalDeviceCommand turnOn() => const SwitchableDeviceCommand.turnOn();
 
   /// set to OFF state
-  PhysicalDeviceCommand turnOff() => const _SwitchableDeviceCommand.turnOff();
+  PhysicalDeviceCommand turnOff() => const SwitchableDeviceCommand.turnOff();
 
   /// toggle state
-  PhysicalDeviceCommand toggle() => const _ToggleDeviceCommand();
+  PhysicalDeviceCommand toggle() => const ToggleDeviceCommand();
 
   /// set brightness in 1-100
   PhysicalDeviceCommand setBrightness(int brightness) =>
-      _BrightnessDeviceCommand(brightness);
+      BrightnessDeviceCommand(brightness);
 
   /// set RGB color value
-  PhysicalDeviceCommand setColor(LightColor color) =>
-      _ColorDeviceCommand(color);
+  PhysicalDeviceCommand setColor(LightColor color) => ColorDeviceCommand(color);
 
   /// set color temperature in 2700-6500
   PhysicalDeviceCommand setColorTemperature(int temperature) =>
-      _ColorTemperatureDeviceCommand(temperature);
+      ColorTemperatureDeviceCommand(temperature);
 }
 
 class StripLightCommandFactory {
-  const StripLightCommandFactory._();
+  const StripLightCommandFactory();
 
   /// set to ON state
-  PhysicalDeviceCommand turnOn() => const _SwitchableDeviceCommand.turnOn();
+  PhysicalDeviceCommand turnOn() => const SwitchableDeviceCommand.turnOn();
 
   /// set to OFF state
-  PhysicalDeviceCommand turnOff() => const _SwitchableDeviceCommand.turnOff();
+  PhysicalDeviceCommand turnOff() => const SwitchableDeviceCommand.turnOff();
 
   /// toggle state
-  PhysicalDeviceCommand toggle() => const _ToggleDeviceCommand();
+  PhysicalDeviceCommand toggle() => const ToggleDeviceCommand();
 
   /// set brightness in 1-100
   PhysicalDeviceCommand setBrightness(int brightness) =>
-      _BrightnessDeviceCommand(brightness);
+      BrightnessDeviceCommand(brightness);
 
   /// set RGB color value
-  PhysicalDeviceCommand setColor(LightColor color) =>
-      _ColorDeviceCommand(color);
+  PhysicalDeviceCommand setColor(LightColor color) => ColorDeviceCommand(color);
 }
 
 class VacuumCleanerCommandFactory {
-  const VacuumCleanerCommandFactory._();
+  const VacuumCleanerCommandFactory();
 
   /// start vacuuming
-  PhysicalDeviceCommand start() => const _VacuumCleanerDeviceCommand.start();
+  PhysicalDeviceCommand start() => const VacuumCleanerDeviceCommand.start();
 
   /// stop vacuuming
-  PhysicalDeviceCommand stop() => const _VacuumCleanerDeviceCommand.stop();
+  PhysicalDeviceCommand stop() => const VacuumCleanerDeviceCommand.stop();
 
   /// return to charging dock
-  PhysicalDeviceCommand dock() => const _VacuumCleanerDeviceCommand.dock();
+  PhysicalDeviceCommand dock() => const VacuumCleanerDeviceCommand.dock();
 
   /// set suction power level
   ///
@@ -161,32 +163,32 @@ class VacuumCleanerCommandFactory {
   /// - 2 (Strong)
   /// - 3 (MAX)
   PhysicalDeviceCommand setPowerLevel(int level) =>
-      _VacuumCleanerDeviceCommand.setPowerLevel(level);
+      VacuumCleanerDeviceCommand.setPowerLevel(level);
 }
 
 class CeilingLightCommandFactory {
-  const CeilingLightCommandFactory._();
+  const CeilingLightCommandFactory();
 
   /// set to ON state
-  PhysicalDeviceCommand turnOn() => const _SwitchableDeviceCommand.turnOn();
+  PhysicalDeviceCommand turnOn() => const SwitchableDeviceCommand.turnOn();
 
   /// set to OFF state
-  PhysicalDeviceCommand turnOff() => const _SwitchableDeviceCommand.turnOff();
+  PhysicalDeviceCommand turnOff() => const SwitchableDeviceCommand.turnOff();
 
   /// toggle state
-  PhysicalDeviceCommand toggle() => const _ToggleDeviceCommand();
+  PhysicalDeviceCommand toggle() => const ToggleDeviceCommand();
 
   /// set brightness
   PhysicalDeviceCommand setBrightness(int brightness) =>
-      _BrightnessDeviceCommand(brightness);
+      BrightnessDeviceCommand(brightness);
 
   /// set the color temperature
   PhysicalDeviceCommand setColorTemperature(int temperature) =>
-      _ColorTemperatureDeviceCommand(temperature);
+      ColorTemperatureDeviceCommand(temperature);
 }
 
 class KeypadCommandFactory {
-  const KeypadCommandFactory._();
+  const KeypadCommandFactory();
 
   /// create a new passcode
   ///
@@ -225,7 +227,7 @@ class KeypadCommandFactory {
     if (endTime != null) {
       param['endTime'] = endTime.millisecondsSinceEpoch ~/ 1000;
     }
-    return _KeypadDeviceCommand(
+    return KeypadDeviceCommand(
       command: 'createKey',
       param: param,
     );
@@ -234,14 +236,14 @@ class KeypadCommandFactory {
   /// delete an existing passcode
   ///
   /// pass [id] of the passcode to be deleted
-  PhysicalDeviceCommand deleteKey(int id) => _KeypadDeviceCommand(
+  PhysicalDeviceCommand deleteKey(int id) => KeypadDeviceCommand(
         command: 'deleteKey',
         param: {'id': id},
       );
 }
 
 class BlindTiltCommandFactory {
-  const BlindTiltCommandFactory._();
+  const BlindTiltCommandFactory();
 
   /// - [direction] : up/down
   /// - [position] : 0~100
@@ -250,7 +252,7 @@ class BlindTiltCommandFactory {
     required String direction,
     required int position,
   }) =>
-      _BlindDeviceCommand.setPosition(
+      BlindDeviceCommand.setPosition(
         direction: direction,
         position: position,
       );
@@ -258,15 +260,15 @@ class BlindTiltCommandFactory {
   /// Set the position of Blind Tilt to open
   ///
   /// equivalent to setting the position to up;100 or down;100
-  PhysicalDeviceCommand fullyOpen() => const _BlindDeviceCommand.fullyOpen();
+  PhysicalDeviceCommand fullyOpen() => const BlindDeviceCommand.fullyOpen();
 
   /// Set the position of Blind Tilt to closed up
   ///
   /// equivalent to setting the position to up;0
-  PhysicalDeviceCommand closeUp() => const _BlindDeviceCommand.closeUp();
+  PhysicalDeviceCommand closeUp() => const BlindDeviceCommand.closeUp();
 
   /// Set the position of Blind Tilt to closed down
   ///
   /// equivalent to setting the position to down;0
-  PhysicalDeviceCommand closeDown() => const _BlindDeviceCommand.closeDown();
+  PhysicalDeviceCommand closeDown() => const BlindDeviceCommand.closeDown();
 }

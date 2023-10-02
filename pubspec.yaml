@@ -1,6 +1,6 @@
 name: switchbot_api_dio
 description: A simple implementation of SwitchBotAPI (v1.1) client with dio library.
-version: 0.0.1
+version: 0.1.0
 homepage: https://github.com/Seo-4d696b75/switchbot_api_dio
 repository: https://github.com/Seo-4d696b75/switchbot_api_dio
 issue_tracker: https://github.com/Seo-4d696b75/switchbot_api_dio/issues
@@ -9,7 +9,7 @@ topics:
   - switchbot
 
 environment:
-  sdk: ">=2.19.0 <3.0.0"
+  sdk: ">=2.15.0 <3.0.0"
 
 dependencies:
   crypto: ^3.0.3
@@ -24,7 +24,7 @@ dev_dependencies:
   http_mock_adapter: ^0.4.4
   json_serializable: ^6.7.1
   mockito: ^5.4.2
-  pedantic_mono: ^1.23.0
+  lints: ^2.1.1
   test: ^1.21.0
 
 flutter:

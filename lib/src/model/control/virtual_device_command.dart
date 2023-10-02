@@ -1,17 +1,22 @@
+import 'package:switchbot_api_dio/src/client.dart';
+import 'package:switchbot_api_dio/src/model/common/enum.dart';
 import 'package:switchbot_api_dio/src/model/control/device_command.dart';
 import 'package:switchbot_api_dio/src/model/device/device_collection.dart';
-import 'package:switchbot_api_dio/src/model/status/device_status.dart';
 
-/// A command for virtual infrared remote devices
+/// Command for virtual infrared remote devices
+///
+/// Not only creating a command by specifying `command` and `param`,
+/// but also factory constructors are available for commonly used commands.
+/// Command can be sent by calling [SwitchBotApi.controlVirtualDevice].
 ///
 /// Depending on [VirtualDeviceType] of a device,
 /// available commands are limited.
 ///
-/// [More details are described in SwitchBot api docs.](https://github.com/OpenWonderLabs/SwitchBotAPI#command-set-for-virtual-infrared-remote-devices)
-///
 /// ## All types except `others`
-/// [VirtualDeviceCommand] can be used for each command.
-/// Some useful commands are also pre-defined.
+/// Primary constructor:
+/// You can create a command by specifying `command` and `param`.
+///
+/// Factory constructors:
 /// - [VirtualDeviceCommand.turnOn] and [VirtualDeviceCommand.turnOff] :
 ///   Almost all the devices support 'turnOn' and 'turnOff' command
 /// - [VirtualDeviceCommand.airConditioner] : 'setAll' command
@@ -25,6 +30,7 @@ import 'package:switchbot_api_dio/src/model/status/device_status.dart';
 /// its only command is trigger the button.
 /// No other commands supported.
 ///
+/// [More details are described in SwitchBot api docs.](https://github.com/OpenWonderLabs/SwitchBotAPI#command-set-for-virtual-infrared-remote-devices)
 class VirtualDeviceCommand implements DeviceCommand {
   /// Command for devices with all types except 'others'.
   ///
@@ -33,10 +39,6 @@ class VirtualDeviceCommand implements DeviceCommand {
   /// - [param] must be set corresponding to [command].
   /// If no param needed (described 'default' in API docs),
   /// set `null`
-  ///
-  ///
-  /// All available commands and required params for each type are
-  /// [described in SwitchBot api docs.](https://github.com/OpenWonderLabs/SwitchBotAPI#command-set-for-virtual-infrared-remote-devices)
   factory VirtualDeviceCommand({
     required String command,
     String? param,

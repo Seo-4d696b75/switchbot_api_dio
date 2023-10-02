@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:switchbot_api_dio/src/model/api_response.dart';
+import 'package:switchbot_api_dio/src/model/common/api_response.dart';
 import 'package:switchbot_api_dio/src/switchbot_exception.dart';
 
 class ResponseConvertInterceptor extends Interceptor {

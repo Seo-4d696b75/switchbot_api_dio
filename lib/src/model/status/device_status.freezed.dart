@@ -3241,8 +3241,8 @@ mixin _$DeviceStatusLock {
 
   /// determines if locked or not
   @LockStateConverter()
-  LockState get lockState =>
-      throw _privateConstructorUsedError; // TODO change to enum if possible
+  LockState get lockState => throw _privateConstructorUsedError;
+
   /// determines if the door is closed or not
   String get doorState => throw _privateConstructorUsedError;
 
@@ -3432,7 +3432,7 @@ class _$_DeviceStatusLock extends _DeviceStatusLock {
   @override
   @LockStateConverter()
   final LockState lockState;
-// TODO change to enum if possible
+
   /// determines if the door is closed or not
   @override
   final String doorState;
@@ -3519,7 +3519,8 @@ abstract class _DeviceStatusLock extends DeviceStatusLock {
   /// determines if locked or not
   @LockStateConverter()
   LockState get lockState;
-  @override // TODO change to enum if possible
+  @override
+
   /// determines if the door is closed or not
   String get doorState;
   @override

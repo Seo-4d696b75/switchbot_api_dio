@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:switchbot_api_dio/src/model/common/enum.dart';
+import 'package:switchbot_api_dio/src/model/common/light_color.dart';
 import 'package:switchbot_api_dio/src/model/device/device_collection.dart';
-import 'package:switchbot_api_dio/src/model/status/device_status.dart';
 
 extension _StringNormalizeExt on String {
   String get normalized => replaceAll(' ', '').toLowerCase();

@@ -2,6 +2,7 @@
 
 part of 'physical_device.dart';
 
+/// Passcode registered in 'Keypad' and 'Keypad Touch' device
 @freezed
 class LockPasscode with _$LockPasscode {
   const factory LockPasscode({
@@ -34,23 +35,4 @@ class LockPasscode with _$LockPasscode {
 
   factory LockPasscode.fromJson(Map<String, dynamic> json) =>
       _$LockPasscodeFromJson(json);
-}
-
-enum PasscodeType {
-  /// a permanent passcode
-  permanent,
-
-  /// a temporary passcode
-  timeLimit,
-
-  /// a one-time passcode
-  disposable,
-
-  /// an emergency passcode
-  urgent,
-}
-
-enum PasscodeStatus {
-  normal,
-  expired,
 }

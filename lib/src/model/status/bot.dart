@@ -34,14 +34,3 @@ class DeviceStatusBot with _$DeviceStatusBot implements DeviceStatus {
   @override
   PhysicalDeviceType get type => PhysicalDeviceType.bot;
 }
-
-enum BotMode {
-  pressMode,
-  switchMode,
-  customizeMode,
-}
-
-enum PowerState {
-  on,
-  off,
-}
