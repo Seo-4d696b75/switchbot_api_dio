@@ -75,8 +75,16 @@ abstract class DeviceStatus {
         return DeviceStatusBlindTilt.fromJson(json);
       case PhysicalDeviceType.hub2:
         return DeviceStatusHub2.fromJson(json);
-      // ignore: no_default_cases
-      default:
+      case PhysicalDeviceType.lock:
+        return DeviceStatusLock.fromJson(json);
+      case PhysicalDeviceType.keypad:
+      case PhysicalDeviceType.keypadTouch:
+      case PhysicalDeviceType.hub:
+      case PhysicalDeviceType.hubPlus:
+      case PhysicalDeviceType.hubMini:
+      case PhysicalDeviceType.remote:
+      case PhysicalDeviceType.indoorCam:
+      case PhysicalDeviceType.panTiltCam:
         return base;
     }
   }
