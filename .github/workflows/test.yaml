@@ -18,11 +18,9 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ steps.read-flutter-version.version }}
+          flutter-version: ${{ steps.read-flutter-version.outputs.version }}
           channel: 'stable'
       - name: Test Preparation
-        run: |
-          flutter pub get
-          flutter pub run build_runner build -d --build-filter='test/**/*.dart'
+        run: flutter pub get
       - name: Run Test
         run: flutter test

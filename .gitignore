@@ -36,4 +36,4 @@ build/
 # /lib/**/*.g.dart
 
 # Mockito
-/test/**/*.mocks.dart
+# /test/**/*.mocks.dart
